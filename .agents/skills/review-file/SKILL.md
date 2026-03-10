@@ -63,6 +63,44 @@ The report must be self-contained so another session or agent can act on it with
 4. **Convention findings** (for `lab/tasks/`, `wiki/`, `contributing/conventions/`, and `AGENTS.md` files only) — grouped by convention number or section (e.g., "4.2. Terminal commands", "Section 3. Task document structure", "Section 2. Agent-neutral content"). Under each group, list findings as numbered items with line numbers. If a group has no findings, write "No issues found."
 5. **TODOs** — list every `<!-- TODO ... -->` comment with its line number and text. If none, write "No TODOs found."
 6. **Empty sections** — list every heading that has no content (only a TODO comment, another heading, or EOF follows). Include line number and heading text. If none, write "No empty sections found."
-7. **Summary** — total finding count and a short overall assessment.
+7. **Summary** — a `| Category | Count |` table followed by an `**Overall**:` assessment paragraph. Include one row per category that applies to the file type, plus a bold **Total** row:
+
+   **For `lab/tasks/` files:**
+
+   ```
+   | Category | Count |
+   |---|---|
+   | Conceptual — High | N |
+   | Conceptual — Medium | N |
+   | Conceptual — Low | N |
+   | Convention violations | N |
+   | TODOs | N |
+   | Empty sections | N |
+   | **Total** | **N** |
+   ```
+
+   **For `wiki/`, `contributing/conventions/`, and `AGENTS.md` files:**
+
+   ```
+   | Category | Count |
+   |---|---|
+   | Convention violations | N |
+   | TODOs | N |
+   | Empty sections | N |
+   | **Total** | **N** |
+   ```
+
+   **For `instructors/meetings/` files:**
+
+   ```
+   | Category | Count |
+   |---|---|
+   | Meeting report findings | N |
+   | TODOs | N |
+   | Empty sections | N |
+   | **Total** | **N** |
+   ```
+
+   After the table, write an `**Overall**:` paragraph summarising the current state of the file and the most important remaining issues.
 
 After writing the file, print its path in the conversation so the user can find it.
