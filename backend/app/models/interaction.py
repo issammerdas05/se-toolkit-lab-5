@@ -24,6 +24,11 @@ class InteractionLog(SQLModel, table=True):
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc).replace(tzinfo=None)
     )
+    
+    @property
+    def timestamp(self) -> datetime:
+        """Return created_at as timestamp for API responses."""
+        return self.created_at
 
 
 class InteractionLogCreate(SQLModel):
